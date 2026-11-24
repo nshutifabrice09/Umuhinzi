@@ -1,6 +1,6 @@
 @Umuhinzi_HostAddress = http://localhost:5178
 
-GET {{Umuhinzi_HostAddress}}/weatherforecast/
+GET {{Umuhinzi_HostAddress}}/umuhinzi/
 Accept: application/json
 
 ###
