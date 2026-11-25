@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Umuhinzi.Models;
 
+namespace Umuhinzi.Data;
+
 public class AppDbContext(DbContextOptions<AppDbContext> options): DbContext(options)
 {
     public DbSet<User> Users => Set<User>();
