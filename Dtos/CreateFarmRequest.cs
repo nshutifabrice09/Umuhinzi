@@ -1,0 +1,18 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Umuhinzi.Dtos;
+
+public record CreateFarmRequest
+{
+	[Required, StringLength(150)]
+	public string Name { get; init; } = string.Empty;
+
+	[Required, StringLength(250)]
+	public string Location { get; init; } = string.Empty;
+
+	[StringLength(100)]
+    public string? Owner { get; init; }
+
+	public long? OwnedId { get; init; }
+}
+
