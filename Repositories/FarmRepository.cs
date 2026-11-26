@@ -32,4 +32,9 @@ public class FarmRepository(AppDbContext db) : IFarmRepository
         db.Farms.Remove(farm);
         await db.SaveChangesAsync(ct);
     }
+
+    public Task<Farm?> GetByIdAsync(CancellationToken ct = default)
+    {
+        throw new NotImplementedException();
+    }
 }

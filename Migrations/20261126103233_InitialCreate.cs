@@ -66,7 +66,6 @@ namespace Umuhinzi.Migrations
                     location = table.Column<string>(type: "text", nullable: false),
                     certification_id = table.Column<string>(type: "text", nullable: true),
                     verified = table.Column<bool>(type: "boolean", nullable: false),
-                    owned_id = table.Column<long>(type: "bigint", nullable: true),
                     owner_id = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -111,7 +110,6 @@ namespace Umuhinzi.Migrations
                     origin_coardinaties = table.Column<string>(type: "text", nullable: true),
                     qr_code_url = table.Column<string>(type: "text", nullable: true),
                     product_id = table.Column<long>(type: "bigint", nullable: true),
-                    farmer_id = table.Column<long>(type: "bigint", nullable: true),
                     farm_id = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>

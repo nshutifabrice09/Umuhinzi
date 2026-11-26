@@ -12,7 +12,7 @@ using Umuhinzi.Data;
 namespace Umuhinzi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261125072624_InitialCreate")]
+    [Migration("20261126103233_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -76,10 +76,6 @@ namespace Umuhinzi.Migrations
                     b.Property<long?>("FarmId")
                         .HasColumnType("bigint")
                         .HasColumnName("farm_id");
-
-                    b.Property<long?>("FarmerId")
-                        .HasColumnType("bigint")
-                        .HasColumnName("farmer_id");
 
                     b.Property<DateOnly>("HarvestDate")
                         .HasColumnType("date")
@@ -175,10 +171,6 @@ namespace Umuhinzi.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
-
-                    b.Property<long?>("OwnedId")
-                        .HasColumnType("bigint")
-                        .HasColumnName("owned_id");
 
                     b.Property<long?>("OwnerId")
                         .HasColumnType("bigint")

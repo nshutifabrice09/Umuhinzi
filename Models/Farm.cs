@@ -7,8 +7,8 @@
         public string Location { get; set; } = string.Empty;
         public string? CertificationId { get; set; }
         public bool Verified { get; set; }
-        public long? OwnedId { get; set; }
-        public User? Owner { get; set; }
 
+        public long? OwnerId { get; set; }
+        public User? Owner { get; set; }
     }
 }

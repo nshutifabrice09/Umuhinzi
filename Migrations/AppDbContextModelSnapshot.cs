@@ -74,10 +74,6 @@ namespace Umuhinzi.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("farm_id");
 
-                    b.Property<long?>("FarmerId")
-                        .HasColumnType("bigint")
-                        .HasColumnName("farmer_id");
-
                     b.Property<DateOnly>("HarvestDate")
                         .HasColumnType("date")
                         .HasColumnName("harvest_date");
@@ -172,10 +168,6 @@ namespace Umuhinzi.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("name");
-
-                    b.Property<long?>("OwnedId")
-                        .HasColumnType("bigint")
-                        .HasColumnName("owned_id");
 
                     b.Property<long?>("OwnerId")
                         .HasColumnType("bigint")

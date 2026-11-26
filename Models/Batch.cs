@@ -8,7 +8,7 @@
         public string? QrCodeUrl { get; set; }
         public long? ProductId { get; set; }
         public Product? Product { get; set; }
-        public long? FarmerId { get; set; }
+        public long? FarmId { get; set; }
         public Farm? Farm { get; set; }
     }
 }
