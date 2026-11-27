@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Umuhinzi.Data;
+using Umuhinzi.Exceptions;
+using Umuhinzi.Repositories;
+using Umuhinzi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +12,18 @@ var connectionString = builder.Configuration.GetConnectionString("Default")
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Default")).UseSnakeCaseNamingConvention());
 
-// Add services to the container.
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IFarmRepository, FarmRepository>();
+builder.Services.AddScoped<FarmService, FarmService>();
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
